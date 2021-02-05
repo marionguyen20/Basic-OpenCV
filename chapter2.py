@@ -2,20 +2,19 @@ import cv2
 import numpy as np
 
 img = cv2.imread("Resource\Hue.JPG")
-cv2.namedWindow("Erosion Image", cv2.WINDOW_NORMAL) #Fixed Size Window
+cv2.namedWindow("Canny Image", cv2.WINDOW_NORMAL) #Fixed Size Window
 
 #Convert into Gray Scale
-img = cv2.imread("Resource\Hue.JPG")
 imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 cv2.imshow("Gray Image",imgGray)
 cv2.waitKey(0)
 
-# #Blur Image
+#Blur Image
 imgBlur = cv2.GaussianBlur(imgGray,(7,7),0)
 cv2.imshow("Blur Image",imgBlur)
 cv2.waitKey(0)
 
-#Edges
+# #Edges
 imgCanny = cv2.Canny(img, 255/3, 255)
 cv2.imshow("Canny Image",imgCanny)
 cv2.waitKey(0)
@@ -32,3 +31,7 @@ cv2.waitKey(0)
 imgEroded = cv2.erode(imgDialte,kernel,iterations=1)
 cv2.imshow("Erosion Image",imgEroded)
 cv2.waitKey(0)
+ 
+
+
+
